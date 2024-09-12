@@ -1,0 +1,46 @@
+<p>计算器前端代码</p>
+
+<h2>{{answer}}</h2>
+
+
+
+<ul class="calculator">
+
+<!--这里是计算器的前端-->
+    <table>
+        <tr>
+            <td><input type="button" value="AC" onclick="removeAll()" /></td>
+            <td><input type="button" value="+/-" onclick="a(`-`)" /></td>
+            <td><input type="button" value="." onclick="a(`.`)" /></td>
+            <td><input type="button" value="=" onclick="RESULT()" /></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="7" onclick="a(7)" /></td>
+            <td><input type="button" value="8" onclick="a(8)" /></td>
+            <td><input type="button" value="9" onclick="a(9)" /></td>
+            <td><button class="operator" onclick="setOperation('/')">/</button></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="4" onclick="a(4)" /></td>
+            <td><input type="button" value="5" onclick="a(5)" /></td>
+            <td><input type="button" value="6" onclick="a(6)" /></td>
+            <td><input type="button" value="%" onclick="div100()"></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="1" onclick="a(1)" /></td>
+            <td><input type="button" value="2" onclick="a(2)" /></td>
+            <td><input type="button" value="3" onclick="a(3)" /></td>
+            <td><input type="button" value="+" onclick="setOperation('+')" /></td>
+        </tr>
+        <tr>
+            <td colspan="2"> <input type="button" value="0" onclick="a(0)" /></td>
+            <td><input type="button" value="-" onclick="setOperation('-')" /></td>
+            <td><input type="button" value="*" onclick="setOperation('*')" /></td>
+        </tr>
+        <tr>
+            <td colspan="4"><input type="text" id="display" /></td>
+        </tr>
+    </table>
+
+
+</ul>
