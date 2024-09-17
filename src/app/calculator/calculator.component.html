@@ -1,45 +1,46 @@
 <p>计算器前端代码</p>
 
-<h2>{{answer}}</h2>
-
-
-
 <ul class="calculator">
 
 <!--这里是计算器的前端-->
     <table>
+      <tbody>
         <tr>
-            <td><input type="button" value="AC" onclick="removeAll()" /></td>
-            <td><input type="button" value="+/-" onclick="a(`-`)" /></td>
-            <td><input type="button" value="." onclick="a(`.`)" /></td>
-            <td><input type="button" value="=" onclick="RESULT()" /></td>
+            <td><input type="button" value="AC" (click)="removeAll()" /></td>
+            <td><input type="button" value="+/-" (click)="a('-')" /></td>
+            <td><input type="button" value="." (click)="a('.')" /></td>
+            <td><input type="button" value="=" (click)="RESULT()" /></td>
         </tr>
         <tr>
-            <td><input type="button" value="7" onclick="a(7)" /></td>
-            <td><input type="button" value="8" onclick="a(8)" /></td>
+            <td><input type="button" value="7" (click)="a(7)" /></td>
+            <td><input type="button" value="8" (click)="a(8)" /></td>
             <td><input type="button" value="9" onclick="a(9)" /></td>
             <td><button class="operator" onclick="setOperation('/')">/</button></td>
         </tr>
         <tr>
-            <td><input type="button" value="4" onclick="a(4)" /></td>
-            <td><input type="button" value="5" onclick="a(5)" /></td>
-            <td><input type="button" value="6" onclick="a(6)" /></td>
-            <td><input type="button" value="%" onclick="div100()"></td>
+            <td><input type="button" value="4" (click)="a(4)" /></td>
+            <td><input type="button" value="5" (click)="a(5)" /></td>
+            <td><input type="button" value="6" (click)="a(6)" /></td>
+            <!--<td><input type="button" value="%" (click)="div100()"></td>-->
         </tr>
         <tr>
-            <td><input type="button" value="1" onclick="a(1)" /></td>
-            <td><input type="button" value="2" onclick="a(2)" /></td>
-            <td><input type="button" value="3" onclick="a(3)" /></td>
-            <td><input type="button" value="+" onclick="setOperation('+')" /></td>
+            <td><input type="button" value="1" (click)="a(1)" /></td>
+            <td><input type="button" value="2" (click)="a(2)" /></td>
+            <td><input type="button" value="3" (click)="a(3)" /></td>
+            <td><input type="button" value="+" (click)="setOperation('+')" /></td>
         </tr>
         <tr>
-            <td colspan="2"> <input type="button" value="0" onclick="a(0)" /></td>
-            <td><input type="button" value="-" onclick="setOperation('-')" /></td>
-            <td><input type="button" value="*" onclick="setOperation('*')" /></td>
+            <td colspan="2"> <input type="button" value="0" (click)="a(0)" /></td>
+            <td><input type="button" value="-" (click)="setOperation('-')" /></td>
+            <td><input type="button" value="*" (click)="setOperation('*')" /></td>
         </tr>
         <tr>
-            <td colspan="4"><input type="text" id="display" /></td>
+            <!--<td colspan="4"><input type="text" id="display" /></td>-->
+            <!--模板引用变量：-->
+            <td colspan="4"> <input type="text" id="display" [(ngModel)]="displayNumberA" /></td>
+
         </tr>
+      </tbody>
     </table>
 
 

@@ -8,14 +8,13 @@
   </li>
 </ul>
 
-<div *ngIf="selectedHero">
-  <h2>{{selectedHero.name | uppercase}} Details</h2>
-  <div>id: {{selectedHero.id}}</div>
-  <div>
-    <label for="hero-name">Hero name: </label>
-    <input id="hero-name" [(ngModel)]="selectedHero.name" placeholder="name">
-  </div>
-</div>
+<!--把 HeroesComponent.selectedHero 绑定到该元素的 hero 属性，
+hero属性必须是一个带有 @Input() 装饰器的输入属性，
+因为外部的 HeroesComponent 组件会绑定到它
+[hero]="selectedHero" 是 Angular 的属性绑定语法。
+-->
+<app-hero-detail [hero]="selectedHero"></app-hero-detail>
+
 
 
 
