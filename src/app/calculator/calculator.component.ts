@@ -17,7 +17,6 @@ export class CalculatorComponent {
 
   removeAll() {
     this.displayNumberA = '';
-
     this.calculateNumberB = '';
     this.storageNumberC = '';
     this.operation = '';
@@ -42,7 +41,7 @@ export class CalculatorComponent {
   setOperation(operation: string): void {
     debugger
     if (this.calculateNumberB !== '') {
-      this.RESULT();
+      RESULT();  //TODO 1+2+ 最后一个加号没走result？
     } else {
       this.calculateNumberB = this.displayNumberA;
       this.displayNumberA = '';
@@ -51,12 +50,21 @@ export class CalculatorComponent {
     this.displayNumberA = '';
   }
 
+
   RESULT(): void {
     if (this.displayNumberA === '') return;
 
-    let result: number;
-    const prev = parseFloat(this.calculateNumberB);
-    const current = parseFloat(this.displayNumberA);
+    var result: number;  //TODO 局部变量
+    var prev = parseFloat(this.calculateNumberB);
+    var current = parseFloat(this.displayNumberA);
+
+    if (this.hasCalculated === true) {
+      prev = parseFloat(this.storageNumberC);
+      current = parseFloat(this.displayNumberA);
+  } else {               //(hasCalculated === false)
+      prev = parseFloat(this.calculateNumberB);
+      current = parseFloat(this.displayNumberA);
+  }
 
     switch (this.operation) {
       case '+':
@@ -79,5 +87,5 @@ export class CalculatorComponent {
     this.hasCalculated = true;
     this.storageNumberC = result.toString();
 
-}
+  }
 }
