@@ -14,14 +14,14 @@
         <tr>
             <td><input type="button" value="7" (click)="a(7)" /></td>
             <td><input type="button" value="8" (click)="a(8)" /></td>
-            <td><input type="button" value="9" onclick="a(9)" /></td>
-            <td><button class="operator" onclick="setOperation('/')">/</button></td>
+            <td><input type="button" value="9" (click)="a(9)" /></td>
+            <td><input type="button" value="/" (click)="setOperation('/')" /></td>
         </tr>
         <tr>
             <td><input type="button" value="4" (click)="a(4)" /></td>
             <td><input type="button" value="5" (click)="a(5)" /></td>
             <td><input type="button" value="6" (click)="a(6)" /></td>
-            <!--<td><input type="button" value="%" (click)="div100()"></td>-->
+            <td><input type="button" value="%" (click)="divideBy100()" /></td>
         </tr>
         <tr>
             <td><input type="button" value="1" (click)="a(1)" /></td>

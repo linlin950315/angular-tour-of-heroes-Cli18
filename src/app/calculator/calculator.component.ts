@@ -41,30 +41,52 @@ export class CalculatorComponent {
   setOperation(operation: string): void {
     debugger
     if (this.calculateNumberB !== '') {
-      RESULT();  //TODO 1+2+ 最后一个加号没走result？
+      console.log('Calling RESULT()');  // 追踪是否进入RESULT
+      this.RESULT();  //TODO 1+2+ 最后一个加号没走result？
     } else {
       this.calculateNumberB = this.displayNumberA;
       this.displayNumberA = '';
     }
     this.operation = operation;
-    this.displayNumberA = '';
+    this.displayNumberA = ''
   }
 
+  divideBy100(): void {
+    debugger
+    var result: number;
+    if (this.displayNumberA !== '' && this.calculateNumberB === '' && this.storageNumberC === '') {
+      console.log('displayNumberA:', this.displayNumberA);
+      console.log('onlyA');
+      result = parseFloat(this.displayNumberA) / 100;
+      this.displayNumberA = result.toString();
+      this.updateDisplay();
+    }
+    if (this.displayNumberA !== '' && this.calculateNumberB !== '') {
+      this.RESULT();
+      result = parseFloat(this.storageNumberC) / 100;
+      this.calculateNumberB = '';  //
+      this.displayNumberA = result.toString();
+      this.updateDisplay();
+      this.hasCalculated = true;
+      this.storageNumberC = result.toString();
+    }
+
+  }
 
   RESULT(): void {
     if (this.displayNumberA === '') return;
 
     var result: number;  //TODO 局部变量
-    var prev = parseFloat(this.calculateNumberB);
-    var current = parseFloat(this.displayNumberA);
+    var prev;
+    var current;
 
     if (this.hasCalculated === true) {
       prev = parseFloat(this.storageNumberC);
       current = parseFloat(this.displayNumberA);
-  } else {               //(hasCalculated === false)
+    } else {               //(hasCalculated === false)
       prev = parseFloat(this.calculateNumberB);
       current = parseFloat(this.displayNumberA);
-  }
+    }
 
     switch (this.operation) {
       case '+':
