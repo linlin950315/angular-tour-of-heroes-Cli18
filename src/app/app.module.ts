@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { HeroesComponent } from './heroes/heroes.component';
 
 import { FormsModule } from '@angular/forms';
-import { CalculatorControllerComponent } from './calculator-controller/calculator-controller.component'; // <-- NgModel lives here
+
 import { CalculatorComponent } from './calculator/calculator.component';
 import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 import { NumbersComponent } from './numbers/numbers.component';
@@ -16,7 +16,6 @@ import { NumbersComponent } from './numbers/numbers.component';
     HeroesComponent,
     CalculatorComponent,
     HeroDetailComponent,
-    CalculatorControllerComponent,
     NumbersComponent,
 
     //打开 src/app/app.module.ts 你就会发现 HeroesComponent 已经在顶部导入过了。

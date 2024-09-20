@@ -47,12 +47,14 @@ export class CalculatorComponent {
       this.calculateNumberB = this.displayNumberA;
       this.displayNumberA = '';
     }
+    console.log("A=" + this.displayNumberA);
+    console.log("B=" + this.calculateNumberB);
+    console.log("C=" + this.storageNumberC);
     this.operation = operation;
     this.displayNumberA = ''
   }
 
   divideBy100(): void {
-    debugger
     var result: number;
     if (this.displayNumberA !== '' && this.calculateNumberB === '' && this.storageNumberC === '') {
       console.log('displayNumberA:', this.displayNumberA);
@@ -74,6 +76,7 @@ export class CalculatorComponent {
   }
 
   RESULT(): void {
+    debugger
     if (this.displayNumberA === '') return;
 
     var result: number;  //TODO 局部变量
